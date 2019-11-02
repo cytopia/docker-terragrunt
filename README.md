@@ -26,6 +26,7 @@
 > [phplint][plint-git-lnk] **•**
 > [php-cs-fixer][pcsf-git-lnk] **•**
 > [pycodestyle][pycs-git-lnk] **•**
+> [pydocstyle][pycs-git-lnk] **•**
 > [pylint][pylint-git-lnk] **•**
 > [terraform-docs][tfdocs-git-lnk] **•**
 > [terragrunt][tg-git-lnk] **•**
@@ -130,6 +131,7 @@ docker run --rm \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
   -e AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN \
+  -u $(id -u):$(id -g) \
   -v /my/tf:/data \
   -w /data/mysql \
   cytopia/terragrunt terragrunt init
@@ -139,6 +141,7 @@ docker run --rm \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
   -e AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN \
+  -u $(id -u):$(id -g) \
   -v /my/tf:/data \
   -w /data/mysql \
   cytopia/terragrunt terragrunt plan
@@ -148,6 +151,7 @@ docker run --rm \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
   -e AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN \
+  -u $(id -u):$(id -g) \
   -v /my/tf:/data \
   -w /data/mysql \
   cytopia/terragrunt terragrunt --terragrunt-non-interactive apply
@@ -193,6 +197,7 @@ docker run --rm \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
   -e AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN \
+  -u $(id -u):$(id -g) \
   -v /my/tf:/data \
   -w /data/envs/aws/dev/eu-central-1/infra/vpc-k8s \
   cytopia/terragrunt terragrunt init
@@ -202,6 +207,7 @@ docker run --rm \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
   -e AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN \
+  -u $(id -u):$(id -g) \
   -v /my/tf:/data \
   -w /data/envs/aws/dev/eu-central-1/infra/vpc-k8s \
   cytopia/terragrunt terragrunt plan
@@ -211,6 +217,7 @@ docker run --rm \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
   -e AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN \
+  -u $(id -u):$(id -g) \
   -v /my/tf:/data \
   -w /data/envs/aws/dev/eu-central-1/infra/vpc-k8s \
   cytopia/terragrunt terragrunt --terragrunt-non-interactive apply
@@ -244,6 +251,7 @@ linter below for reproducible local or remote CI tests:
 | [php-cs-fixer][pcsf-git-lnk]     | [![pcsf-hub-img]][pcsf-hub-lnk]       | PHP        | PHP Coding Standards Fixer |
 | [black][black-git-lnk]           | [![black-hub-img]][black-hub-lnk]     | Python     | The uncompromising Python code formatter |
 | [pycodestyle][pycs-git-lnk]      | [![pycs-hub-img]][pycs-hub-lnk]       | Python     | Python style guide checker |
+| [pydocstyle][pyds-git-lnk]       | [![pyds-hub-img]][pyds-hub-lnk]       | Python     | Python docstyle checker |
 | [pylint][pylint-git-lnk]         | [![pylint-hub-img]][pylint-hub-lnk]   | Python     | Python source code, bug and quality checker |
 | [terraform-docs][tfdocs-git-lnk] | [![tfdocs-hub-img]][tfdocs-hub-lnk]   | Terraform  | Terraform doc generator (TF 0.12 ready) **<sup>[1]</sup>** |
 | [terragrunt][tg-git-lnk]         | [![tg-hub-img]][tg-hub-lnk]           | Terraform  | Terragrunt and Terraform |
@@ -316,6 +324,10 @@ linter below for reproducible local or remote CI tests:
 [pycs-git-lnk]: https://github.com/cytopia/docker-pycodestyle
 [pycs-hub-img]: https://img.shields.io/docker/pulls/cytopia/pycodestyle.svg
 [pycs-hub-lnk]: https://hub.docker.com/r/cytopia/pycodestyle
+
+[pyds-git-lnk]: https://github.com/cytopia/docker-pydocstyle
+[pyds-hub-img]: https://img.shields.io/docker/pulls/cytopia/pydocstyle.svg
+[pyds-hub-lnk]: https://hub.docker.com/r/cytopia/pydocstyle
 
 [pylint-git-lnk]: https://github.com/cytopia/docker-pylint
 [pylint-hub-img]: https://img.shields.io/docker/pulls/cytopia/pylint.svg
