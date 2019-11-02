@@ -26,6 +26,8 @@ env:
   matrix:
     - TF=0.11 TG=0.18
     - TF=0.12 TG=0.19
+    - TF=0.12 TG=0.20
+    - TF=0.12 TG=0.21
     - TF=latest TG=latest
 
 
