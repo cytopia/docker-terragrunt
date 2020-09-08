@@ -45,6 +45,7 @@ _test-tf-version:
 			| tac | tac \
 			| grep -Eo '/[.0-9]+/' \
 			| grep -Eo '[.0-9]+' \
+			| sort -u \
 			| sort -V \
 			| tail -1 \
 		)"; \
