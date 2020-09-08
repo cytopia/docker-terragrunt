@@ -41,7 +41,7 @@ RUN set -eux \
 	&& if [ "${TG_VERSION}" = "latest" ]; then \
 		VERSION="$( git describe --abbrev=0 --tags )"; \
 	else \
-		VERSION="$( git tag | grep -E "v${TG_VERSION}\.[.0-9]+" | sort -u | tail -1 )" ;\
+		VERSION="$( git tag | grep -E "v${TG_VERSION}\.[.0-9]+" | sort -Vu | tail -1 )" ;\
 	fi \
 	&& curl -sS -L \
 		https://github.com/gruntwork-io/terragrunt/releases/download/${VERSION}/terragrunt_linux_amd64 \
