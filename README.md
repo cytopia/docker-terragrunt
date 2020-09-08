@@ -22,6 +22,7 @@
 > [golint][glint-git-lnk] **•**
 > [jsonlint][jlint-git-lnk] **•**
 > [linkcheck][linkcheck-git-lnk] **•**
+> [mypy][mypy-git-lnk] **•**
 > [phpcbf][pcbf-git-lnk] **•**
 > [phpcs][pcs-git-lnk] **•**
 > [phplint][plint-git-lnk] **•**
@@ -256,6 +257,7 @@ linter below for reproducible local or remote CI tests:
 | [phplint][plint-git-lnk]         | [![plint-hub-img]][plint-hub-lnk]     | PHP        | PHP Code Linter **<sup>[1]</sup>** |
 | [php-cs-fixer][pcsf-git-lnk]     | [![pcsf-hub-img]][pcsf-hub-lnk]       | PHP        | PHP Coding Standards Fixer |
 | [black][black-git-lnk]           | [![black-hub-img]][black-hub-lnk]     | Python     | The uncompromising Python code formatter |
+| [mypy][mypy-git-lnk]             | [![mypy-hub-img]][mypy-hub-lnk]       | Python     | Static source code analysis |
 | [pycodestyle][pycs-git-lnk]      | [![pycs-hub-img]][pycs-hub-lnk]       | Python     | Python style guide checker |
 | [pydocstyle][pyds-git-lnk]       | [![pyds-hub-img]][pyds-hub-lnk]       | Python     | Python docstyle checker |
 | [pylint][pylint-git-lnk]         | [![pylint-hub-img]][pylint-hub-lnk]   | Python     | Python source code, bug and quality checker |
@@ -330,6 +332,10 @@ linter below for reproducible local or remote CI tests:
 [black-git-lnk]: https://github.com/cytopia/docker-black
 [black-hub-img]: https://img.shields.io/docker/pulls/cytopia/black.svg
 [black-hub-lnk]: https://hub.docker.com/r/cytopia/black
+
+[mypy-git-lnk]: https://github.com/cytopia/docker-mypy
+[mypy-hub-img]: https://img.shields.io/docker/pulls/cytopia/mypy.svg
+[mypy-hub-lnk]: https://hub.docker.com/r/cytopia/mypy
 
 [pycs-git-lnk]: https://github.com/cytopia/docker-pycodestyle
 [pycs-hub-img]: https://img.shields.io/docker/pulls/cytopia/pycodestyle.svg
