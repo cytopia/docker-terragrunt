@@ -31,6 +31,7 @@ env:
     - TF=0.12 TG=0.22
     - TF=0.12 TG=0.23
     - TF=0.13 TG=0.23
+    - TF=0.13 TG=0.24
     - TF=latest TG=latest
 
 

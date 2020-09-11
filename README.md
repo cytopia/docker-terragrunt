@@ -60,12 +60,16 @@ they always contain the latest stable version as shown below.
 | Docker tag   | Terraform version      | Terragrunt version     |
 |--------------|------------------------|------------------------|
 | `latest`     | latest stable          | latest stable          |
+|              |                        |                        |
+| `0.13-0.24`  | latest stable `0.13.x` | latest stable `0.24.x` |
 | `0.13-0.23`  | latest stable `0.13.x` | latest stable `0.23.x` |
+|              |                        |                        |
 | `0.12-0.23`  | latest stable `0.12.x` | latest stable `0.23.x` |
 | `0.12-0.22`  | latest stable `0.12.x` | latest stable `0.22.x` |
 | `0.12-0.21`  | latest stable `0.12.x` | latest stable `0.21.x` |
 | `0.12-0.20`  | latest stable `0.12.x` | latest stable `0.20.x` |
 | `0.12-0.19`  | latest stable `0.12.x` | latest stable `0.19.x` |
+|              |                        |                        |
 | `0.11-0.18`  | latest stable `0.11.x` | latest stable `0.18.x` |
 
 
@@ -77,12 +81,16 @@ you will have to take care yourself and update your CI tools every time a new ta
 | Docker tag        | docker-terragrunt | Terraform version                          | Terragrunt version                         |
 |-------------------|-------------------|--------------------------------------------|--------------------------------------------|
 | `latest-<tag>`    | Tag: `<tag>`      | latest stable during tag creation          | latest stable during tag creation          |
+|                   |                   |                                            |                                            |
+| `0.13-0.24-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.24.x` during tag creation |
 | `0.13-0.23-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.23.x` during tag creation |
+|                   |                   |                                            |                                            |
 | `0.12-0.23-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.23.x` during tag creation |
 | `0.12-0.22-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.22.x` during tag creation |
 | `0.12-0.21-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.21.x` during tag creation |
 | `0.12-0.20-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.20.x` during tag creation |
 | `0.12-0.19-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.19.x` during tag creation |
+|                   |                   |                                            |                                            |
 | `0.11-0.18-<tag>` | Tag: `<tag>`      | latest stable `0.11.x` during tag creation | latest stable `0.18.x` during tag creation |
 
 Where `<tag>` refers to the chosen git tag from this repository.
