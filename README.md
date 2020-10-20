@@ -109,6 +109,17 @@ docker run --rm -v $(pwd):/data cytopia/terragrunt terragrunt <ARGS>
 docker run --rm -v $(pwd):/data cytopia/terragrunt terraform <ARGS>
 ```
 
+## Environment variables
+
+The following environment variables will ease your life when mounting directories into the docker container by maintaining file system permissions.
+
+| Variables      | Default | Description |
+|----------------|---------|-------------|
+| `RUN_NON_ROOT` | `0`     | Set to `1` to run commands as user instead of root. |
+| `UID`          | `1000`  | Set to the uid of your local user (`id -u`) if you want to run as non root. |
+| `GID`          | `1000`  | Set to the gid of your local user (`id -g`) if you want to run as non root. |
+
+
 ## Examples
 
 ### 1. Simple: Provision single sub-project on AWS
