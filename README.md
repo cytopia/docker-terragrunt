@@ -61,9 +61,14 @@ they always contain the latest stable version as shown below.
 |--------------|------------------------|------------------------|
 | `latest`     | latest stable          | latest stable          |
 |              |                        |                        |
+| `0.13-0.26`  | latest stable `0.13.x` | latest stable `0.26.x` |
+| `0.13-0.25`  | latest stable `0.13.x` | latest stable `0.25.x` |
 | `0.13-0.24`  | latest stable `0.13.x` | latest stable `0.24.x` |
 | `0.13-0.23`  | latest stable `0.13.x` | latest stable `0.23.x` |
 |              |                        |                        |
+| `0.12-0.26`  | latest stable `0.12.x` | latest stable `0.26.x` |
+| `0.12-0.25`  | latest stable `0.12.x` | latest stable `0.25.x` |
+| `0.12-0.24`  | latest stable `0.12.x` | latest stable `0.24.x` |
 | `0.12-0.23`  | latest stable `0.12.x` | latest stable `0.23.x` |
 | `0.12-0.22`  | latest stable `0.12.x` | latest stable `0.22.x` |
 | `0.12-0.21`  | latest stable `0.12.x` | latest stable `0.21.x` |
@@ -82,9 +87,14 @@ you will have to take care yourself and update your CI tools every time a new ta
 |-------------------|-------------------|--------------------------------------------|--------------------------------------------|
 | `latest-<tag>`    | Tag: `<tag>`      | latest stable during tag creation          | latest stable during tag creation          |
 |                   |                   |                                            |                                            |
+| `0.13-0.26-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.26.x` during tag creation |
+| `0.13-0.25-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.25.x` during tag creation |
 | `0.13-0.24-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.24.x` during tag creation |
 | `0.13-0.23-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.23.x` during tag creation |
 |                   |                   |                                            |                                            |
+| `0.12-0.26-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.26.x` during tag creation |
+| `0.12-0.25-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.25.x` during tag creation |
+| `0.12-0.24-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.24.x` during tag creation |
 | `0.12-0.23-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.23.x` during tag creation |
 | `0.12-0.22-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.22.x` during tag creation |
 | `0.12-0.21-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.21.x` during tag creation |
