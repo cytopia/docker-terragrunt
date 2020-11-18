@@ -25,13 +25,20 @@ services:
 env:
   matrix:
     - TF=0.11 TG=0.18
+
     - TF=0.12 TG=0.19
     - TF=0.12 TG=0.20
     - TF=0.12 TG=0.21
     - TF=0.12 TG=0.22
     - TF=0.12 TG=0.23
+    - TF=0.12 TG=0.24
+    - TF=0.12 TG=0.25
+    - TF=0.12 TG=0.26
+
     - TF=0.13 TG=0.23
     - TF=0.13 TG=0.24
+    - TF=0.13 TG=0.25
+    - TF=0.13 TG=0.26
     - TF=latest TG=latest
 
 
