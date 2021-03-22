@@ -2,24 +2,35 @@ ifneq (,)
 .error This Makefile requires GNU Make.
 endif
 
-.PHONY: build rebuild lint test _test-tf-version _test-tg-version _test-tf _test-tg tag pull login push enter
+.PHONY: lint build rebuild test
 
+# --------------------------------------------------------------------------------------------------
+# VARIABLES
+# --------------------------------------------------------------------------------------------------
 CURRENT_DIR = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 DIR = .
 FILE = Dockerfile
 IMAGE = cytopia/terragrunt
 TAG = latest
+NO_CACHE=
 
 TF_VERSION = latest
 TG_VERSION = latest
 
-build:
-	docker build --build-arg TF_VERSION=$(TF_VERSION) --build-arg TG_VERSION=$(TG_VERSION) -t $(IMAGE) -f $(DIR)/$(FILE) $(DIR)
 
-rebuild: pull
-	docker build --no-cache --build-arg TF_VERSION=$(TF_VERSION) --build-arg TG_VERSION=$(TG_VERSION) -t $(IMAGE) -f $(DIR)/$(FILE) $(DIR)
+# --------------------------------------------------------------------------------------------------
+# DEFAULT TARGET
+# --------------------------------------------------------------------------------------------------
+help:
+	@echo "lint                               Lint repository files"
+	@echo "build [TF_VERSION=] [TG_VERSION=]  Build image"
+	@echo "test [TF_VERSION=] [TG_VERSION=]   Test image"
 
+
+# --------------------------------------------------------------------------------------------------
+# LINT TARGETS
+# --------------------------------------------------------------------------------------------------
 lint:
 	@docker run --rm -v $(CURRENT_DIR):/data cytopia/file-lint file-cr --text --ignore '.git/,.github/,tests/' --path .
 	@docker run --rm -v $(CURRENT_DIR):/data cytopia/file-lint file-crlf --text --ignore '.git/,.github/,tests/' --path .
@@ -28,12 +39,31 @@ lint:
 	@docker run --rm -v $(CURRENT_DIR):/data cytopia/file-lint file-utf8 --text --ignore '.git/,.github/,tests/' --path .
 	@docker run --rm -v $(CURRENT_DIR):/data cytopia/file-lint file-utf8-bom --text --ignore '.git/,.github/,tests/' --path .
 
+
+# --------------------------------------------------------------------------------------------------
+# BUILD TARGETS
+# --------------------------------------------------------------------------------------------------
+build:
+	docker build $(NO_CACHE) \
+		--build-arg TF_VERSION=$(TF_VERSION) \
+		--build-arg TG_VERSION=$(TG_VERSION) \
+		-t $(IMAGE) -f $(DIR)/$(FILE) $(DIR)
+
+rebuild: _pull
+rebuild: NO_CACHE=--no-cache
+rebuild: build
+
+
+# --------------------------------------------------------------------------------------------------
+# TEST TARGETS
+# --------------------------------------------------------------------------------------------------
 test:
 	@$(MAKE) --no-print-directory _test-tf-version
 	@$(MAKE) --no-print-directory _test-tg-version
 	@$(MAKE) --no-print-directory _test-tf
 	@$(MAKE) --no-print-directory _test-tg
 
+.PHONY: _test-tf-version
 _test-tf-version:
 	@echo "------------------------------------------------------------"
 	@echo "- Testing correct Terraform version"
@@ -63,6 +93,7 @@ _test-tf-version:
 	fi; \
 	echo "Success"; \
 
+.PHONY: _test-tg-version
 _test-tg-version:
 	@echo "------------------------------------------------------------"
 	@echo "- Testing correct Terragrunt version"
@@ -92,6 +123,7 @@ _test-tg-version:
 	fi; \
 	echo "Success"; \
 
+.PHONY: _test-tf
 _test-tf:
 	@echo "------------------------------------------------------------"
 	@echo "- Testing Terraform"
@@ -102,6 +134,7 @@ _test-tf:
 	fi; \
 	echo "Success";
 
+.PHONY: _test-tg
 _test-tg:
 	@echo "------------------------------------------------------------"
 	@echo "- Testing Terragrunt"
@@ -114,20 +147,29 @@ _test-tg:
 	docker run --rm -v $(CURRENT_DIR)/tests/terragrunt:/data $(IMAGE) sh -c "if test -d .terragrunt-cache; then rm -rf .terragrunt-cache; fi"; \
 	echo "Success";
 
-tag:
-	docker tag $(IMAGE) $(IMAGE):$(TAG)
 
-pull:
+# --------------------------------------------------------------------------------------------------
+# HELPER TARGETS
+# --------------------------------------------------------------------------------------------------
+_pull:
 	@grep -E '^\s*FROM' Dockerfile \
 		| sed -e 's/^FROM//g' -e 's/[[:space:]]*as[[:space:]]*.*$$//g' \
 		| xargs -n1 docker pull;
 
+
+# --------------------------------------------------------------------------------------------------
+# DEPLOY TARGETS
+# --------------------------------------------------------------------------------------------------
+.PHONY: tag
+tag:
+	docker tag $(IMAGE) $(IMAGE):$(TAG)
+
+
+.PHONY: login
 login:
 	yes | docker login --username $(USER) --password $(PASS)
 
+.PHONY: push
 push:
 	@$(MAKE) tag TAG=$(TAG)
 	docker push $(IMAGE):$(TAG)
-
-enter:
-	docker run --rm --name $(subst /,-,$(IMAGE)) -it --entrypoint=/bin/sh $(ARG) $(IMAGE):$(TAG)

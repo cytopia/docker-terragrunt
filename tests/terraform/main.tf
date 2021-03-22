@@ -4,7 +4,7 @@ resource "aws_iam_role" "roles" {
   description = "my-role description"
 
   # This policy defines who/what is allowed to use the current role
-  assume_role_policy = "${file("policy.json")}"
+  assume_role_policy = file("policy.json")
 
   # Allow session for X seconds
   max_session_duration  = "3600"
