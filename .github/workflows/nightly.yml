@@ -158,6 +158,7 @@ jobs:
             return 1;
           }
           retry make test TF_VERSION=${TF_VERSION} TG_VERSION=${TG_VERSION}
+          git diff --quiet || { echo "Build Changes"; git diff; git status; false; }
         env:
           RETRIES: 20
 
