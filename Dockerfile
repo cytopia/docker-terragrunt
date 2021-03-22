@@ -1,10 +1,8 @@
-FROM debian:stable-slim as builder
+FROM alpine:3.13 as builder
 
 # Install build dependencies
 RUN set -eux \
-	&& DEBIAN_FRONTEND=noninteractive apt-get update -qq \
-	&& DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --no-install-recommends --no-install-suggests \
-		ca-certificates \
+	&& apk --no-cache add \
 		curl \
 		git \
 		unzip
@@ -48,8 +46,14 @@ RUN set -eux \
 		-o /usr/bin/terragrunt \
 	&& chmod +x /usr/bin/terragrunt
 
+# Test binaries
+RUN set -eux \
+	&& terraform --version \
+	&& terragrunt --version
+
+
 # Use a clean tiny image to store artifacts in
-FROM alpine:3.9
+FROM alpine:3.13
 LABEL \
 	maintainer="cytopia <cytopia@everythingcli.org>" \
 	repo="https://github.com/cytopia/docker-terragrunt"

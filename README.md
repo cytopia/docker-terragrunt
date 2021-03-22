@@ -1,6 +1,5 @@
 # Docker image for `terragrunt`
 
-[![Build Status](https://travis-ci.com/cytopia/docker-terragrunt.svg?branch=master)](https://travis-ci.com/cytopia/docker-terragrunt)
 [![Tag](https://img.shields.io/github/tag/cytopia/docker-terragrunt.svg)](https://github.com/cytopia/docker-terragrunt/releases)
 [![](https://images.microbadger.com/badges/version/cytopia/terragrunt:latest.svg?&kill_cache=1)](https://microbadger.com/images/cytopia/terragrunt:latest "terragrunt")
 [![](https://images.microbadger.com/badges/image/cytopia/terragrunt:latest.svg?&kill_cache=1)](https://microbadger.com/images/cytopia/terragrunt:latest "terragrunt")
@@ -8,11 +7,16 @@
 [![](https://img.shields.io/badge/github-cytopia%2Fdocker--terragrunt-red.svg)](https://github.com/cytopia/docker-terragrunt "github.com/cytopia/docker-terragrunt")
 [![License](https://img.shields.io/badge/license-MIT-%233DA639.svg)](https://opensource.org/licenses/MIT)
 
+[![lint](https://github.com/cytopia/docker-terragrunt/workflows/lint/badge.svg)](https://github.com/cytopia/docker-terragrunt/actions?query=workflow%3Alint)
+[![build](https://github.com/cytopia/docker-terragrunt/workflows/build/badge.svg)](https://github.com/cytopia/docker-terragrunt/actions?query=workflow%3Abuild)
+[![nightly](https://github.com/cytopia/docker-terragrunt/workflows/nightly/badge.svg)](https://github.com/cytopia/docker-terragrunt/actions?query=workflow%3Anightly)
+
 > #### All [#awesome-ci](https://github.com/topics/awesome-ci) Docker images
 >
-> [ansible][ansible-git-lnk] **•**
 > [ansible-lint][alint-git-lnk] **•**
+> [ansible][ansible-git-lnk] **•**
 > [awesome-ci][aci-git-lnk] **•**
+> [bandit][bandit-git-lnk] **•**
 > [black][black-git-lnk] **•**
 > [checkmake][cm-git-lnk] **•**
 > [eslint][elint-git-lnk] **•**
@@ -23,16 +27,16 @@
 > [jsonlint][jlint-git-lnk] **•**
 > [linkcheck][linkcheck-git-lnk] **•**
 > [mypy][mypy-git-lnk] **•**
+> [php-cs-fixer][pcsf-git-lnk] **•**
 > [phpcbf][pcbf-git-lnk] **•**
 > [phpcs][pcs-git-lnk] **•**
 > [phplint][plint-git-lnk] **•**
-> [php-cs-fixer][pcsf-git-lnk] **•**
 > [pycodestyle][pycs-git-lnk] **•**
 > [pydocstyle][pyds-git-lnk] **•**
 > [pylint][pylint-git-lnk] **•**
 > [terraform-docs][tfdocs-git-lnk] **•**
-> [terragrunt][tg-git-lnk] **•**
 > [terragrunt-fmt][tgfmt-git-lnk] **•**
+> [terragrunt][tg-git-lnk] **•**
 > [yamlfmt][yfmt-git-lnk] **•**
 > [yamllint][ylint-git-lnk]
 
@@ -61,11 +65,22 @@ they always contain the latest stable version as shown below.
 |--------------|------------------------|------------------------|
 | `latest`     | latest stable          | latest stable          |
 |              |                        |                        |
+| `0.14-0.28`  | latest stable `0.14.x` | latest stable `0.28.x` |
+| `0.14-0.27`  | latest stable `0.14.x` | latest stable `0.27.x` |
+| `0.14-0.26`  | latest stable `0.14.x` | latest stable `0.26.x` |
+| `0.14-0.25`  | latest stable `0.14.x` | latest stable `0.25.x` |
+| `0.14-0.24`  | latest stable `0.14.x` | latest stable `0.24.x` |
+| `0.14-0.23`  | latest stable `0.14.x` | latest stable `0.23.x` |
+|              |                        |                        |
+| `0.13-0.28`  | latest stable `0.13.x` | latest stable `0.28.x` |
+| `0.13-0.27`  | latest stable `0.13.x` | latest stable `0.27.x` |
 | `0.13-0.26`  | latest stable `0.13.x` | latest stable `0.26.x` |
 | `0.13-0.25`  | latest stable `0.13.x` | latest stable `0.25.x` |
 | `0.13-0.24`  | latest stable `0.13.x` | latest stable `0.24.x` |
 | `0.13-0.23`  | latest stable `0.13.x` | latest stable `0.23.x` |
 |              |                        |                        |
+| `0.12-0.28`  | latest stable `0.12.x` | latest stable `0.28.x` |
+| `0.12-0.27`  | latest stable `0.12.x` | latest stable `0.27.x` |
 | `0.12-0.26`  | latest stable `0.12.x` | latest stable `0.26.x` |
 | `0.12-0.25`  | latest stable `0.12.x` | latest stable `0.25.x` |
 | `0.12-0.24`  | latest stable `0.12.x` | latest stable `0.24.x` |
@@ -87,11 +102,22 @@ you will have to take care yourself and update your CI tools every time a new ta
 |-------------------|-------------------|--------------------------------------------|--------------------------------------------|
 | `latest-<tag>`    | Tag: `<tag>`      | latest stable during tag creation          | latest stable during tag creation          |
 |                   |                   |                                            |                                            |
+| `0.14-0.28-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.28.x` during tag creation |
+| `0.14-0.27-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.27.x` during tag creation |
+| `0.14-0.26-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.26.x` during tag creation |
+| `0.14-0.25-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.25.x` during tag creation |
+| `0.14-0.24-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.24.x` during tag creation |
+| `0.14-0.23-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.23.x` during tag creation |
+|                   |                   |                                            |                                            |
+| `0.13-0.28-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.28.x` during tag creation |
+| `0.13-0.27-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.27.x` during tag creation |
 | `0.13-0.26-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.26.x` during tag creation |
 | `0.13-0.25-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.25.x` during tag creation |
 | `0.13-0.24-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.24.x` during tag creation |
 | `0.13-0.23-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.23.x` during tag creation |
 |                   |                   |                                            |                                            |
+| `0.12-0.28-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.28.x` during tag creation |
+| `0.12-0.27-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.27.x` during tag creation |
 | `0.12-0.26-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.26.x` during tag creation |
 | `0.12-0.25-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.25.x` during tag creation |
 | `0.12-0.24-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.24.x` during tag creation |
@@ -287,6 +313,7 @@ linter below for reproducible local or remote CI tests:
 | [phpcs][pcs-git-lnk]             | [![pcs-hub-img]][pcs-hub-lnk]         | PHP        | PHP Code Sniffer |
 | [phplint][plint-git-lnk]         | [![plint-hub-img]][plint-hub-lnk]     | PHP        | PHP Code Linter **<sup>[1]</sup>** |
 | [php-cs-fixer][pcsf-git-lnk]     | [![pcsf-hub-img]][pcsf-hub-lnk]       | PHP        | PHP Coding Standards Fixer |
+| [bandit][bandit-git-lnk]         | [![bandit-hub-img]][bandit-hub-lnk]   | Python     | A security linter from PyCQA
 | [black][black-git-lnk]           | [![black-hub-img]][black-hub-lnk]     | Python     | The uncompromising Python code formatter |
 | [mypy][mypy-git-lnk]             | [![mypy-hub-img]][mypy-hub-lnk]       | Python     | Static source code analysis |
 | [pycodestyle][pycs-git-lnk]      | [![pycs-hub-img]][pycs-hub-lnk]       | Python     | Python style guide checker |
@@ -359,6 +386,10 @@ linter below for reproducible local or remote CI tests:
 [pcsf-git-lnk]: https://github.com/cytopia/docker-php-cs-fixer
 [pcsf-hub-img]: https://img.shields.io/docker/pulls/cytopia/php-cs-fixer.svg
 [pcsf-hub-lnk]: https://hub.docker.com/r/cytopia/php-cs-fixer
+
+[bandit-git-lnk]: https://github.com/cytopia/docker-bandit
+[bandit-hub-img]: https://img.shields.io/docker/pulls/cytopia/bandit.svg
+[bandit-hub-lnk]: https://hub.docker.com/r/cytopia/bandit
 
 [black-git-lnk]: https://github.com/cytopia/docker-black
 [black-hub-img]: https://img.shields.io/docker/pulls/cytopia/black.svg
