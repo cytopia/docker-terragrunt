@@ -28,6 +28,8 @@ jobs:
         version:
           - 'TF-latest TG-latest'
 
+          - 'TF-0.15   TG-0.29'
+
           - 'TF-0.14   TG-0.28'
           - 'TF-0.14   TG-0.27'
           - 'TF-0.14   TG-0.26'
