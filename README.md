@@ -65,7 +65,7 @@ they always contain the latest stable version as shown below.
 |--------------|------------------------|------------------------|
 | `latest`     | latest stable          | latest stable          |
 |              |                        |                        |
-| `1.0-0.29`   | latest stable `1.0.x`  | latest stable `0.29.x` |
+| `1.0-0.31`   | latest stable `1.0.x`  | latest stable `0.31.x` |
 |              |                        |                        |
 | `0.15-0.29`  | latest stable `0.15.x` | latest stable `0.29.x` |
 |              |                        |                        |
@@ -106,7 +106,7 @@ you will have to take care yourself and update your CI tools every time a new ta
 |-------------------|-------------------|--------------------------------------------|--------------------------------------------|
 | `latest-<tag>`    | Tag: `<tag>`      | latest stable during tag creation          | latest stable during tag creation          |
 |                   |                   |                                            |                                            |
-| `1.0-0.29-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.29.x` during tag creation |
+| `1.0-0.31-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.31.x` during tag creation |
 |                   |                   |                                            |                                            |
 | `0.15-0.29-<tag>` | Tag: `<tag>`      | latest stable `0.15.x` during tag creation | latest stable `0.29.x` during tag creation |
 |                   |                   |                                            |                                            |

@@ -28,7 +28,7 @@ jobs:
         version:
           - 'TF-latest TG-latest'
 
-          - 'TF-1.0    TG-0.29'
+          - 'TF-1.0    TG-0.31'
 
           - 'TF-0.15   TG-0.29'
 
