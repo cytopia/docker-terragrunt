@@ -65,28 +65,26 @@ they always contain the latest stable version as shown below.
 |--------------|------------------------|------------------------|
 | `latest`     | latest stable          | latest stable          |
 |              |                        |                        |
-| `1.0-0.29`   | latest stable `1.0.x`  | latest stable `0.29.x` |
+| `1.0-0.31`   | latest stable `1.0.x`  | latest stable `0.31.x` |
 |              |                        |                        |
+| `0.15-0.31`  | latest stable `0.15.x` | latest stable `0.31.x` |
+| `0.15-0.30`  | latest stable `0.15.x` | latest stable `0.30.x` |
 | `0.15-0.29`  | latest stable `0.15.x` | latest stable `0.29.x` |
 |              |                        |                        |
+| `0.14-0.31`  | latest stable `0.14.x` | latest stable `0.31.x` |
+| `0.14-0.30`  | latest stable `0.14.x` | latest stable `0.30.x` |
+| `0.14-0.29`  | latest stable `0.14.x` | latest stable `0.29.x` |
 | `0.14-0.28`  | latest stable `0.14.x` | latest stable `0.28.x` |
 | `0.14-0.27`  | latest stable `0.14.x` | latest stable `0.27.x` |
-| `0.14-0.26`  | latest stable `0.14.x` | latest stable `0.26.x` |
-| `0.14-0.25`  | latest stable `0.14.x` | latest stable `0.25.x` |
-| `0.14-0.24`  | latest stable `0.14.x` | latest stable `0.24.x` |
-| `0.14-0.23`  | latest stable `0.14.x` | latest stable `0.23.x` |
 |              |                        |                        |
+| `0.13-0.31`  | latest stable `0.13.x` | latest stable `0.31.x` |
+| `0.13-0.30`  | latest stable `0.13.x` | latest stable `0.30.x` |
+| `0.13-0.29`  | latest stable `0.13.x` | latest stable `0.29.x` |
 | `0.13-0.28`  | latest stable `0.13.x` | latest stable `0.28.x` |
 | `0.13-0.27`  | latest stable `0.13.x` | latest stable `0.27.x` |
 | `0.13-0.26`  | latest stable `0.13.x` | latest stable `0.26.x` |
 | `0.13-0.25`  | latest stable `0.13.x` | latest stable `0.25.x` |
-| `0.13-0.24`  | latest stable `0.13.x` | latest stable `0.24.x` |
-| `0.13-0.23`  | latest stable `0.13.x` | latest stable `0.23.x` |
 |              |                        |                        |
-| `0.12-0.28`  | latest stable `0.12.x` | latest stable `0.28.x` |
-| `0.12-0.27`  | latest stable `0.12.x` | latest stable `0.27.x` |
-| `0.12-0.26`  | latest stable `0.12.x` | latest stable `0.26.x` |
-| `0.12-0.25`  | latest stable `0.12.x` | latest stable `0.25.x` |
 | `0.12-0.24`  | latest stable `0.12.x` | latest stable `0.24.x` |
 | `0.12-0.23`  | latest stable `0.12.x` | latest stable `0.23.x` |
 | `0.12-0.22`  | latest stable `0.12.x` | latest stable `0.22.x` |
@@ -106,28 +104,26 @@ you will have to take care yourself and update your CI tools every time a new ta
 |-------------------|-------------------|--------------------------------------------|--------------------------------------------|
 | `latest-<tag>`    | Tag: `<tag>`      | latest stable during tag creation          | latest stable during tag creation          |
 |                   |                   |                                            |                                            |
-| `1.0-0.29-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.29.x` during tag creation |
+| `1.0-0.31-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.31.x` during tag creation |
 |                   |                   |                                            |                                            |
+| `0.15-0.31-<tag>` | Tag: `<tag>`      | latest stable `0.15.x` during tag creation | latest stable `0.31.x` during tag creation |
+| `0.15-0.30-<tag>` | Tag: `<tag>`      | latest stable `0.15.x` during tag creation | latest stable `0.30.x` during tag creation |
 | `0.15-0.29-<tag>` | Tag: `<tag>`      | latest stable `0.15.x` during tag creation | latest stable `0.29.x` during tag creation |
 |                   |                   |                                            |                                            |
+| `0.14-0.31-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.31.x` during tag creation |
+| `0.14-0.30-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.30.x` during tag creation |
+| `0.14-0.29-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.29.x` during tag creation |
 | `0.14-0.28-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.28.x` during tag creation |
 | `0.14-0.27-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.27.x` during tag creation |
-| `0.14-0.26-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.26.x` during tag creation |
-| `0.14-0.25-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.25.x` during tag creation |
-| `0.14-0.24-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.24.x` during tag creation |
-| `0.14-0.23-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.23.x` during tag creation |
 |                   |                   |                                            |                                            |
+| `0.13-0.31-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.31.x` during tag creation |
+| `0.13-0.30-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.30.x` during tag creation |
+| `0.13-0.29-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.29.x` during tag creation |
 | `0.13-0.28-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.28.x` during tag creation |
 | `0.13-0.27-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.27.x` during tag creation |
 | `0.13-0.26-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.26.x` during tag creation |
 | `0.13-0.25-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.25.x` during tag creation |
-| `0.13-0.24-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.24.x` during tag creation |
-| `0.13-0.23-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.23.x` during tag creation |
 |                   |                   |                                            |                                            |
-| `0.12-0.28-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.28.x` during tag creation |
-| `0.12-0.27-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.27.x` during tag creation |
-| `0.12-0.26-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.26.x` during tag creation |
-| `0.12-0.25-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.25.x` during tag creation |
 | `0.12-0.24-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.24.x` during tag creation |
 | `0.12-0.23-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.23.x` during tag creation |
 | `0.12-0.22-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.22.x` during tag creation |
