@@ -13,14 +13,14 @@ RUN set -eux \
 	&& if [ "${TF_VERSION}" = "latest" ]; then \
 		VERSION="$( curl -sS https://releases.hashicorp.com/terraform/ \
 			| tac | tac \
-			| grep -Eo '/[.0-9]+/' \
+			| grep -Eo '/terraform/[.0-9]+' \
 			| grep -Eo '[.0-9]+' \
 			| sort -V \
 			| tail -1 )"; \
 	else \
 		VERSION="$( curl -sS https://releases.hashicorp.com/terraform/ \
 			| tac | tac \
-			| grep -Eo "/${TF_VERSION}\.[.0-9]+/" \
+			| grep -Eo "/terraform/${TF_VERSION}\.[.0-9]+" \
 			| grep -Eo '[.0-9]+' \
 			| sort -V \
 			| tail -1 )"; \
