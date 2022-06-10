@@ -66,8 +66,14 @@ they always contain the latest stable version as shown below.
 |--------------|------------------------|------------------------|
 | `latest`     | latest stable          | latest stable          |
 |              |                        |                        |
+| `1.2-0.37`   | latest stable `1.2.x`  | latest stable `0.37.x` |
+|              |                        |                        |
+| `1.1-0.37`   | latest stable `1.1.x`  | latest stable `0.37.x` |
+| `1.1-0.36`   | latest stable `1.1.x`  | latest stable `0.36.x` |
 | `1.1-0.35`   | latest stable `1.1.x`  | latest stable `0.35.x` |
 |              |                        |                        |
+| `1.0-0.37`   | latest stable `1.0.x`  | latest stable `0.37.x` |
+| `1.0-0.36`   | latest stable `1.0.x`  | latest stable `0.36.x` |
 | `1.0-0.35`   | latest stable `1.0.x`  | latest stable `0.35.x` |
 | `1.0-0.34`   | latest stable `1.0.x`  | latest stable `0.34.x` |
 | `1.0-0.33`   | latest stable `1.0.x`  | latest stable `0.33.x` |
@@ -120,8 +126,14 @@ you will have to take care yourself and update your CI tools every time a new ta
 |-------------------|-------------------|--------------------------------------------|--------------------------------------------|
 | `latest-<tag>`    | Tag: `<tag>`      | latest stable during tag creation          | latest stable during tag creation          |
 |                   |                   |                                            |                                            |
+| `1.1-0.37-<tag>`  | Tag: `<tag>`      | latest stable `1.1.x` during tag creation  | latest stable `0.37.x` during tag creation |
+|                   |                   |                                            |                                            |
+| `1.1-0.37-<tag>`  | Tag: `<tag>`      | latest stable `1.1.x` during tag creation  | latest stable `0.37.x` during tag creation |
+| `1.1-0.36-<tag>`  | Tag: `<tag>`      | latest stable `1.1.x` during tag creation  | latest stable `0.36.x` during tag creation |
 | `1.1-0.35-<tag>`  | Tag: `<tag>`      | latest stable `1.1.x` during tag creation  | latest stable `0.35.x` during tag creation |
 |                   |                   |                                            |                                            |
+| `1.0-0.37-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.37.x` during tag creation |
+| `1.0-0.36-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.36.x` during tag creation |
 | `1.0-0.35-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.35.x` during tag creation |
 | `1.0-0.34-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.34.x` during tag creation |
 | `1.0-0.33-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.33.x` during tag creation |
