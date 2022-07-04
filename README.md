@@ -67,11 +67,14 @@ they always contain the latest stable version as shown below.
 | `latest`     | latest stable          | latest stable          |
 |              |                        |                        |
 | `1.2-0.37`   | latest stable `1.2.x`  | latest stable `0.37.x` |
+| `1.2-0.38`   | latest stable `1.2.x`  | latest stable `0.38.x` |
 |              |                        |                        |
 | `1.1-0.37`   | latest stable `1.1.x`  | latest stable `0.37.x` |
+| `1.1-0.38`   | latest stable `1.1.x`  | latest stable `0.38.x` |
 | `1.1-0.36`   | latest stable `1.1.x`  | latest stable `0.36.x` |
 | `1.1-0.35`   | latest stable `1.1.x`  | latest stable `0.35.x` |
 |              |                        |                        |
+| `1.0-0.38`   | latest stable `1.0.x`  | latest stable `0.38.x` |
 | `1.0-0.37`   | latest stable `1.0.x`  | latest stable `0.37.x` |
 | `1.0-0.36`   | latest stable `1.0.x`  | latest stable `0.36.x` |
 | `1.0-0.35`   | latest stable `1.0.x`  | latest stable `0.35.x` |

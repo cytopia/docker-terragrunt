@@ -73,7 +73,7 @@ _test-tf-version:
 		LATEST="$$( \
 			curl -L -sS https://releases.hashicorp.com/terraform/ \
 			| tac | tac \
-			| grep -Eo '/terraform/[.0-9]+\"' \
+			| grep -Eo '/terraform/[.0-9]+/\"' \
 			| grep -Eo '[.0-9]+' \
 			| sort -u \
 			| sort -V \
