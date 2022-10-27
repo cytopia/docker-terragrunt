@@ -48,7 +48,6 @@ env:
             "TF-0.14   TG-0.30",
             "TF-0.14   TG-0.29",
             "TF-0.14   TG-0.28",
-            "TF-0.14   TG-0.27",
 
             "TF-0.13   TG-0.34",
             "TF-0.13   TG-0.33",
@@ -56,7 +55,16 @@ env:
             "TF-0.13   TG-0.31",
             "TF-0.13   TG-0.30",
             "TF-0.13   TG-0.29",
-            "TF-0.13   TG-0.28",
+            "TF-0.13   TG-0.28"
+        ],
+        "FLAVOUR": ["latest"],
+        "ARCH":    ["linux/amd64", "linux/386", "linux/arm64"]
+      },
+      {
+        "NAME":    "tg",
+        "VERSION": [
+            "TF-0.14   TG-0.27",
+
             "TF-0.13   TG-0.27",
             "TF-0.13   TG-0.26",
             "TF-0.13   TG-0.25",
@@ -71,7 +79,7 @@ env:
             "TF-0.11   TG-0.18"
         ],
         "FLAVOUR": ["latest"],
-        "ARCH":    ["linux/amd64", "linux/386", "linux/arm64"]
+        "ARCH":    ["linux/amd64", "linux/386"]
       }
     ]
 
