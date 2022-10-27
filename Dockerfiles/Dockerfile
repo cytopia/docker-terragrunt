@@ -4,6 +4,7 @@ FROM alpine:3.13 as builder
 RUN set -eux \
 	&& apk --no-cache add \
 		curl \
+		dpkg \
 		git \
 		unzip
 
