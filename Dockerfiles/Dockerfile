@@ -25,9 +25,21 @@ RUN set -eux \
 			| sort -V \
 			| tail -1 )"; \
 	fi \
+	\
+	# Get correct architecture
+	&& if [ "$(dpkg --print-architecture | awk -F'-' '{print $NF}' )" = "i386" ]; then\
+		ARCH=386; \
+	elif [ "$(uname -m)" = "x86_64" ]; then \
+		ARCH=amd64; \
+	elif [ "$(uname -m)" = "aarch64" ]; then \
+		ARCH=arm64; \
+	elif [ "$(uname -m)" = "armv7l" ]; then \
+		ARCH=arm; \
+	fi \
+	\
 	&& curl -sS -L -O \
-		https://releases.hashicorp.com/terraform/${VERSION}/terraform_${VERSION}_linux_amd64.zip \
-	&& unzip terraform_${VERSION}_linux_amd64.zip \
+		https://releases.hashicorp.com/terraform/${VERSION}/terraform_${VERSION}_linux_${ARCH}.zip \
+	&& unzip terraform_${VERSION}_linux_${ARCH}.zip \
 	&& mv terraform /usr/bin/terraform \
 	&& chmod +x /usr/bin/terraform
 
@@ -41,8 +53,19 @@ RUN set -eux \
 	else \
 		VERSION="$( git tag | grep -E "v${TG_VERSION}\.[.0-9]+" | sort -Vu | tail -1 )" ;\
 	fi \
+	# Get correct architecture
+	&& if [ "$(dpkg --print-architecture | awk -F'-' '{print $NF}' )" = "i386" ]; then\
+		ARCH=386; \
+	elif [ "$(uname -m)" = "x86_64" ]; then \
+		ARCH=amd64; \
+	elif [ "$(uname -m)" = "aarch64" ]; then \
+		ARCH=arm64; \
+	elif [ "$(uname -m)" = "armv7l" ]; then \
+		ARCH=arm; \
+	fi \
+	\
 	&& curl -sS -L \
-		https://github.com/gruntwork-io/terragrunt/releases/download/${VERSION}/terragrunt_linux_amd64 \
+		https://github.com/gruntwork-io/terragrunt/releases/download/${VERSION}/terragrunt_linux_${ARCH} \
 		-o /usr/bin/terragrunt \
 	&& chmod +x /usr/bin/terragrunt
 
