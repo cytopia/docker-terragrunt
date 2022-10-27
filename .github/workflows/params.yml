@@ -1,0 +1,125 @@
+---
+
+# -------------------------------------------------------------------------------------------------
+# Job Name
+# -------------------------------------------------------------------------------------------------
+name: params
+
+
+# -------------------------------------------------------------------------------------------------
+# Custom Variables
+# -------------------------------------------------------------------------------------------------
+env:
+  MATRIX: >-
+    [
+      {
+        "NAME":    "tg",
+        "VERSION": [
+            "latest",
+
+            "TF-1.2    TG-0.38",
+            "TF-1.2    TG-0.37",
+
+            "TF-1.1    TG-0.38",
+            "TF-1.1    TG-0.37",
+            "TF-1.1    TG-0.36",
+            "TF-1.1    TG-0.35",
+
+            "TF-1.0    TG-0.38",
+            "TF-1.0    TG-0.37",
+            "TF-1.0    TG-0.36",
+            "TF-1.0    TG-0.35",
+            "TF-1.0    TG-0.34",
+            "TF-1.0    TG-0.33",
+            "TF-1.0    TG-0.32",
+            "TF-1.0    TG-0.31",
+
+            "TF-0.15   TG-0.34",
+            "TF-0.15   TG-0.33",
+            "TF-0.15   TG-0.32",
+            "TF-0.15   TG-0.31",
+            "TF-0.15   TG-0.30",
+            "TF-0.15   TG-0.29",
+
+            "TF-0.14   TG-0.34",
+            "TF-0.14   TG-0.33",
+            "TF-0.14   TG-0.32",
+            "TF-0.14   TG-0.31",
+            "TF-0.14   TG-0.30",
+            "TF-0.14   TG-0.29",
+            "TF-0.14   TG-0.28",
+            "TF-0.14   TG-0.27",
+
+            "TF-0.13   TG-0.34",
+            "TF-0.13   TG-0.33",
+            "TF-0.13   TG-0.32",
+            "TF-0.13   TG-0.31",
+            "TF-0.13   TG-0.30",
+            "TF-0.13   TG-0.29",
+            "TF-0.13   TG-0.28",
+            "TF-0.13   TG-0.27",
+            "TF-0.13   TG-0.26",
+            "TF-0.13   TG-0.25",
+
+            "TF-0.12   TG-0.24",
+            "TF-0.12   TG-0.23",
+            "TF-0.12   TG-0.22",
+            "TF-0.12   TG-0.21",
+            "TF-0.12   TG-0.20",
+            "TF-0.12   TG-0.19",
+
+            "TF-0.11   TG-0.18"
+        ],
+        "FLAVOUR": ["latest"],
+        "ARCH":    ["linux/amd64", "linux/386", "linux/arm64"]
+      }
+    ]
+
+
+# -------------------------------------------------------------------------------------------------
+# When to run
+# -------------------------------------------------------------------------------------------------
+on:
+  workflow_call:
+    outputs:
+      matrix:
+        description: "The determined version matrix"
+        value: ${{ jobs.params.outputs.matrix }}
+      refs:
+        description: "The determined git ref matrix (only during scheduled run)"
+        value: ${{ jobs.params.outputs.refs }}
+
+jobs:
+  params:
+    runs-on: ubuntu-latest
+
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      refs: ${{ steps.set-refs.outputs.matrix }}
+
+    steps:
+      - name: "[Set-Output] Matrix"
+        id: set-matrix
+        run: |
+          echo "matrix=$( echo '${{ env.MATRIX }}' | jq -M -c )" >> $GITHUB_OUTPUT
+
+      - name: "[Set-Output] Matrix 'Refs' (master branch and latest tag)"
+        id: set-refs
+        uses: cytopia/git-ref-matrix-action@v0.1.11
+        with:
+          repository_default_branch: master
+          branches: master
+          num_latest_tags: 0
+        if: github.event_name == 'schedule'
+
+      - name: "[DEBUG] Show settings'"
+        run: |
+          echo 'Matrix'
+          echo '--------------------'
+          echo '${{ steps.set-matrix.outputs.matrix }}'
+          echo
+
+          echo 'Matrix: Refs'
+          echo '--------------------'
+          echo '${{ steps.set-matrix-refs.outputs.matrix }}'
+          echo
