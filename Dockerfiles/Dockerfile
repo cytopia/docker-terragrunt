@@ -38,7 +38,7 @@ RUN set -eux \
 		ARCH=arm; \
 	fi \
 	\
-	&& curl -sS -L -O \
+	&& curl --fail -sS -L -O \
 		https://releases.hashicorp.com/terraform/${VERSION}/terraform_${VERSION}_linux_${ARCH}.zip \
 	&& unzip terraform_${VERSION}_linux_${ARCH}.zip \
 	&& mv terraform /usr/bin/terraform \
@@ -65,7 +65,7 @@ RUN set -eux \
 		ARCH=arm; \
 	fi \
 	\
-	&& curl -sS -L \
+	&& curl --fail -sS -L \
 		https://github.com/gruntwork-io/terragrunt/releases/download/${VERSION}/terragrunt_linux_${ARCH} \
 		-o /usr/bin/terragrunt \
 	&& chmod +x /usr/bin/terragrunt
