@@ -168,7 +168,7 @@ _test-tg-version:
 		LATEST="$$( \
 			curl -L -sS https://github.com/gruntwork-io/terragrunt/releases \
 			| tac | tac \
-			| grep -Eo '/v[.0-9]+/' \
+			| grep -Eo '/v[.0-9]+"' \
 			| grep -Eo 'v[.0-9]+' \
 			| sort -u \
 			| sort -V \
