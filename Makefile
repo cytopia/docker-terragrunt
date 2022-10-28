@@ -46,7 +46,7 @@ ifeq ($(strip $(TAG)),latest)
 		DOCKER_TAG = $(FLAVOUR)
 	else
 		ifeq ($(strip $(FLAVOUR)),latest)
-			DOCKER_TAG = $(TF_VERSION)-$(TF_VERSION)
+			DOCKER_TAG = $(TF_VERSION)-$(TG_VERSION)
 		else
 			DOCKER_TAG = $(FLAVOUR)-$(TF_VERSION)-$(TG_VERSION)
 		endif
