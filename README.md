@@ -1,15 +1,13 @@
 # Docker image for `terragrunt`
 
 [![Tag](https://img.shields.io/github/tag/cytopia/docker-terragrunt.svg)](https://github.com/cytopia/docker-terragrunt/releases)
-[![](https://images.microbadger.com/badges/version/cytopia/terragrunt:latest.svg?&kill_cache=1)](https://microbadger.com/images/cytopia/terragrunt:latest "terragrunt")
-[![](https://images.microbadger.com/badges/image/cytopia/terragrunt:latest.svg?&kill_cache=1)](https://microbadger.com/images/cytopia/terragrunt:latest "terragrunt")
-[![](https://img.shields.io/docker/pulls/cytopia/terragrunt.svg)](https://hub.docker.com/r/cytopia/terragrunt)
 [![](https://img.shields.io/badge/github-cytopia%2Fdocker--terragrunt-red.svg)](https://github.com/cytopia/docker-terragrunt "github.com/cytopia/docker-terragrunt")
 [![License](https://img.shields.io/badge/license-MIT-%233DA639.svg)](https://opensource.org/licenses/MIT)
 
 [![lint](https://github.com/cytopia/docker-terragrunt/workflows/lint/badge.svg)](https://github.com/cytopia/docker-terragrunt/actions?query=workflow%3Alint)
 [![build](https://github.com/cytopia/docker-terragrunt/workflows/build/badge.svg)](https://github.com/cytopia/docker-terragrunt/actions?query=workflow%3Abuild)
 [![nightly](https://github.com/cytopia/docker-terragrunt/workflows/nightly/badge.svg)](https://github.com/cytopia/docker-terragrunt/actions?query=workflow%3Anightly)
+
 
 > #### All [#awesome-ci](https://github.com/topics/awesome-ci) Docker images
 >
@@ -41,13 +39,10 @@
 > [yamlfmt][yfmt-git-lnk] **•**
 > [yamllint][ylint-git-lnk]
 
-> #### All [#awesome-ci](https://github.com/topics/awesome-ci) Makefiles
->
-> Visit **[cytopia/makefiles](https://github.com/cytopia/makefiles)** for seamless project integration, minimum required best-practice code linting and CI.
+View **[Dockerfiles](https://github.com/cytopia/docker-terragrunt/blob/master/Dockerfiles/)** on GitHub.
 
-View **[Dockerfile](https://github.com/cytopia/docker-terragrunt/blob/master/Dockerfile)** on GitHub.
 
-[![Docker hub](http://dockeri.co/image/cytopia/terragrunt?&kill_cache=1)](https://hub.docker.com/r/cytopia/terragrunt)
+**Available Architectures:**  `amd64`, `i386`, `arm64`
 
 Tiny Alpine-based multistage-build dockerized version of [Terragrunt](https://github.com/gruntwork-io/terragrunt)<sup>[1]</sup>
 and its compatible version of [Terraform](https://github.com/hashicorp/terraform)<sup>[2]</sup>.
@@ -56,146 +51,156 @@ and its compatible version of [Terraform](https://github.com/hashicorp/terraform
 * <sub>[2] Official project: https://github.com/hashicorp/terraform</sub>
 
 
-## Available Docker image versions
+## :whale: Available Docker image versions
 
-### Rolling releases
-The following Docker image tags are rolling releases and built and updated nightly. This means
-they always contain the latest stable version as shown below.
+[![](https://img.shields.io/docker/pulls/cytopia/terragrunt.svg)](https://hub.docker.com/r/cytopia/terragrunt)
+[![Docker](https://badgen.net/badge/icon/:latest?icon=docker&label=cytopia/terragrunt)](https://hub.docker.com/r/cytopia/terragrunt)
 
-| Docker tag   | Terraform version      | Terragrunt version     |
-|--------------|------------------------|------------------------|
-| `latest`     | latest stable          | latest stable          |
-|              |                        |                        |
-| `1.2-0.37`   | latest stable `1.2.x`  | latest stable `0.37.x` |
-| `1.2-0.38`   | latest stable `1.2.x`  | latest stable `0.38.x` |
-|              |                        |                        |
-| `1.1-0.37`   | latest stable `1.1.x`  | latest stable `0.37.x` |
-| `1.1-0.38`   | latest stable `1.1.x`  | latest stable `0.38.x` |
-| `1.1-0.36`   | latest stable `1.1.x`  | latest stable `0.36.x` |
-| `1.1-0.35`   | latest stable `1.1.x`  | latest stable `0.35.x` |
-|              |                        |                        |
-| `1.0-0.38`   | latest stable `1.0.x`  | latest stable `0.38.x` |
-| `1.0-0.37`   | latest stable `1.0.x`  | latest stable `0.37.x` |
-| `1.0-0.36`   | latest stable `1.0.x`  | latest stable `0.36.x` |
-| `1.0-0.35`   | latest stable `1.0.x`  | latest stable `0.35.x` |
-| `1.0-0.34`   | latest stable `1.0.x`  | latest stable `0.34.x` |
-| `1.0-0.33`   | latest stable `1.0.x`  | latest stable `0.33.x` |
-| `1.0-0.32`   | latest stable `1.0.x`  | latest stable `0.32.x` |
-| `1.0-0.31`   | latest stable `1.0.x`  | latest stable `0.31.x` |
-|              |                        |                        |
-| `0.15-0.34`  | latest stable `0.15.x` | latest stable `0.34.x` |
-| `0.15-0.33`  | latest stable `0.15.x` | latest stable `0.33.x` |
-| `0.15-0.32`  | latest stable `0.15.x` | latest stable `0.32.x` |
-| `0.15-0.31`  | latest stable `0.15.x` | latest stable `0.31.x` |
-| `0.15-0.30`  | latest stable `0.15.x` | latest stable `0.30.x` |
-| `0.15-0.29`  | latest stable `0.15.x` | latest stable `0.29.x` |
-|              |                        |                        |
-| `0.14-0.34`  | latest stable `0.14.x` | latest stable `0.34.x` |
-| `0.14-0.33`  | latest stable `0.14.x` | latest stable `0.33.x` |
-| `0.14-0.32`  | latest stable `0.14.x` | latest stable `0.32.x` |
-| `0.14-0.31`  | latest stable `0.14.x` | latest stable `0.31.x` |
-| `0.14-0.30`  | latest stable `0.14.x` | latest stable `0.30.x` |
-| `0.14-0.29`  | latest stable `0.14.x` | latest stable `0.29.x` |
-| `0.14-0.28`  | latest stable `0.14.x` | latest stable `0.28.x` |
-| `0.14-0.27`  | latest stable `0.14.x` | latest stable `0.27.x` |
-|              |                        |                        |
-| `0.13-0.34`  | latest stable `0.13.x` | latest stable `0.34.x` |
-| `0.13-0.33`  | latest stable `0.13.x` | latest stable `0.33.x` |
-| `0.13-0.32`  | latest stable `0.13.x` | latest stable `0.32.x` |
-| `0.13-0.31`  | latest stable `0.13.x` | latest stable `0.31.x` |
-| `0.13-0.30`  | latest stable `0.13.x` | latest stable `0.30.x` |
-| `0.13-0.29`  | latest stable `0.13.x` | latest stable `0.29.x` |
-| `0.13-0.28`  | latest stable `0.13.x` | latest stable `0.28.x` |
-| `0.13-0.27`  | latest stable `0.13.x` | latest stable `0.27.x` |
-| `0.13-0.26`  | latest stable `0.13.x` | latest stable `0.26.x` |
-| `0.13-0.25`  | latest stable `0.13.x` | latest stable `0.25.x` |
-|              |                        |                        |
-| `0.12-0.24`  | latest stable `0.12.x` | latest stable `0.24.x` |
-| `0.12-0.23`  | latest stable `0.12.x` | latest stable `0.23.x` |
-| `0.12-0.22`  | latest stable `0.12.x` | latest stable `0.22.x` |
-| `0.12-0.21`  | latest stable `0.12.x` | latest stable `0.21.x` |
-| `0.12-0.20`  | latest stable `0.12.x` | latest stable `0.20.x` |
-| `0.12-0.19`  | latest stable `0.12.x` | latest stable `0.19.x` |
-|              |                        |                        |
-| `0.11-0.18`  | latest stable `0.11.x` | latest stable `0.18.x` |
+#### Rolling releaess
+
+The following Docker image tags are rolling releases and are built and updated every night.
+
+[![nightly](https://github.com/cytopia/docker-terragrunt/workflows/nightly/badge.svg)](https://github.com/cytopia/docker-terragrunt/actions?query=workflow%3Anightly)
 
 
-### Point in time releases
-If you want to ensure to have reproducible Terraform/Terragrunt executions you should use a git tag from
-this repository. Tags are incremented for each new version, but never updated itself. This means
-you will have to take care yourself and update your CI tools every time a new tag is being released.
+| Docker Tag           | Git Ref   | Terraform     | Terragrunt   | Available Architectures                      |
+|----------------------|-----------|---------------|--------------|----------------------------------------------|
+| `latest`             | master    | latest        | latest       | `amd64`, `i386`, `arm64`                     |
+|                      |           |               |              |                                              |
+| `1.2-0.38`           | master    | **`1.2.x`**   | **`0.38.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.2-0.37`           | master    | **`1.2.x`**   | **`0.37.x`** | `amd64`, `i386`, `arm64`                     |
+|                      |           |               |              |                                              |
+| `1.1-0.38`           | master    | **`1.1.x`**   | **`0.38.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.1-0.37`           | master    | **`1.1.x`**   | **`0.37.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.1-0.36`           | master    | **`1.1.x`**   | **`0.36.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.1-0.35`           | master    | **`1.1.x`**   | **`0.35.x`** | `amd64`, `i386`, `arm64`                     |
+|                      |           |               |              |                                              |
+| `1.0-0.38`           | master    | **`1.0.x`**   | **`0.38.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.37`           | master    | **`1.0.x`**   | **`0.37.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.36`           | master    | **`1.0.x`**   | **`0.36.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.35`           | master    | **`1.0.x`**   | **`0.35.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.34`           | master    | **`1.0.x`**   | **`0.34.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.33`           | master    | **`1.0.x`**   | **`0.33.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.32`           | master    | **`1.0.x`**   | **`0.32.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.31`           | master    | **`1.0.x`**   | **`0.31.x`** | `amd64`, `i386`, `arm64`                     |
+|                      |           |               |              |                                              |
+| `0.15-0.34`          | master    | **`0.15.x`**  | **`0.34.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.15-0.33`          | master    | **`0.15.x`**  | **`0.33.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.15-0.32`          | master    | **`0.15.x`**  | **`0.32.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.15-0.31`          | master    | **`0.15.x`**  | **`0.31.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.15-0.30`          | master    | **`0.15.x`**  | **`0.30.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.15-0.29`          | master    | **`0.15.x`**  | **`0.29.x`** | `amd64`, `i386`, `arm64`                     |
+|                      |           |               |              |                                              |
+| `0.14-0.34`          | master    | **`0.14.x`**  | **`0.34.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.33`          | master    | **`0.14.x`**  | **`0.33.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.32`          | master    | **`0.14.x`**  | **`0.32.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.31`          | master    | **`0.14.x`**  | **`0.31.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.30`          | master    | **`0.14.x`**  | **`0.30.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.29`          | master    | **`0.14.x`**  | **`0.29.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.28`          | master    | **`0.14.x`**  | **`0.28.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.27`          | master    | **`0.14.x`**  | **`0.27.x`** | `amd64`, `i386`                              |
+|                      |           |               |              |                                              |
+| `0.13-0.34`          | master    | **`0.13.x`**  | **`0.34.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.33`          | master    | **`0.13.x`**  | **`0.33.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.32`          | master    | **`0.13.x`**  | **`0.32.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.31`          | master    | **`0.13.x`**  | **`0.31.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.30`          | master    | **`0.13.x`**  | **`0.30.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.29`          | master    | **`0.13.x`**  | **`0.29.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.28`          | master    | **`0.13.x`**  | **`0.28.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.27`          | master    | **`0.13.x`**  | **`0.27.x`** | `amd64`, `i386`                              |
+| `0.13-0.26`          | master    | **`0.13.x`**  | **`0.26.x`** | `amd64`, `i386`                              |
+| `0.13-0.25`          | master    | **`0.13.x`**  | **`0.25.x`** | `amd64`, `i386`                              |
+|                      |           |               |              |                                              |
+| `0.12-0.24`          | master    | **`0.12.x`**  | **`0.24.x`** | `amd64`, `i386`                              |
+| `0.12-0.23`          | master    | **`0.12.x`**  | **`0.23.x`** | `amd64`, `i386`                              |
+| `0.12-0.22`          | master    | **`0.12.x`**  | **`0.22.x`** | `amd64`, `i386`                              |
+| `0.12-0.21`          | master    | **`0.12.x`**  | **`0.21.x`** | `amd64`, `i386`                              |
+| `0.12-0.20`          | master    | **`0.12.x`**  | **`0.20.x`** | `amd64`, `i386`                              |
+| `0.12-0.19`          | master    | **`0.12.x`**  | **`0.19.x`** | `amd64`, `i386`                              |
+|                      |           |               |              |                                              |
+| `0.11-0.18`          | master    | **`0.11.x`**  | **`0.18.x`** | `amd64`, `i386`                              |
 
-| Docker tag        | docker-terragrunt | Terraform version                          | Terragrunt version                         |
-|-------------------|-------------------|--------------------------------------------|--------------------------------------------|
-| `latest-<tag>`    | Tag: `<tag>`      | latest stable during tag creation          | latest stable during tag creation          |
-|                   |                   |                                            |                                            |
-| `1.1-0.37-<tag>`  | Tag: `<tag>`      | latest stable `1.1.x` during tag creation  | latest stable `0.37.x` during tag creation |
-|                   |                   |                                            |                                            |
-| `1.1-0.37-<tag>`  | Tag: `<tag>`      | latest stable `1.1.x` during tag creation  | latest stable `0.37.x` during tag creation |
-| `1.1-0.36-<tag>`  | Tag: `<tag>`      | latest stable `1.1.x` during tag creation  | latest stable `0.36.x` during tag creation |
-| `1.1-0.35-<tag>`  | Tag: `<tag>`      | latest stable `1.1.x` during tag creation  | latest stable `0.35.x` during tag creation |
-|                   |                   |                                            |                                            |
-| `1.0-0.37-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.37.x` during tag creation |
-| `1.0-0.36-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.36.x` during tag creation |
-| `1.0-0.35-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.35.x` during tag creation |
-| `1.0-0.34-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.34.x` during tag creation |
-| `1.0-0.33-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.33.x` during tag creation |
-| `1.0-0.32-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.32.x` during tag creation |
-| `1.0-0.31-<tag>`  | Tag: `<tag>`      | latest stable `1.0.x` during tag creation  | latest stable `0.31.x` during tag creation |
-|                   |                   |                                            |                                            |
-| `0.15-0.34-<tag>` | Tag: `<tag>`      | latest stable `0.15.x` during tag creation | latest stable `0.34.x` during tag creation |
-| `0.15-0.33-<tag>` | Tag: `<tag>`      | latest stable `0.15.x` during tag creation | latest stable `0.33.x` during tag creation |
-| `0.15-0.32-<tag>` | Tag: `<tag>`      | latest stable `0.15.x` during tag creation | latest stable `0.32.x` during tag creation |
-| `0.15-0.31-<tag>` | Tag: `<tag>`      | latest stable `0.15.x` during tag creation | latest stable `0.31.x` during tag creation |
-| `0.15-0.30-<tag>` | Tag: `<tag>`      | latest stable `0.15.x` during tag creation | latest stable `0.30.x` during tag creation |
-| `0.15-0.29-<tag>` | Tag: `<tag>`      | latest stable `0.15.x` during tag creation | latest stable `0.29.x` during tag creation |
-|                   |                   |                                            |                                            |
-| `0.14-0.34-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.34.x` during tag creation |
-| `0.14-0.33-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.33.x` during tag creation |
-| `0.14-0.32-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.32.x` during tag creation |
-| `0.14-0.31-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.31.x` during tag creation |
-| `0.14-0.30-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.30.x` during tag creation |
-| `0.14-0.29-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.29.x` during tag creation |
-| `0.14-0.28-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.28.x` during tag creation |
-| `0.14-0.27-<tag>` | Tag: `<tag>`      | latest stable `0.14.x` during tag creation | latest stable `0.27.x` during tag creation |
-|                   |                   |                                            |                                            |
-| `0.13-0.34-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.34.x` during tag creation |
-| `0.13-0.33-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.33.x` during tag creation |
-| `0.13-0.32-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.32.x` during tag creation |
-| `0.13-0.31-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.31.x` during tag creation |
-| `0.13-0.30-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.30.x` during tag creation |
-| `0.13-0.29-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.29.x` during tag creation |
-| `0.13-0.28-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.28.x` during tag creation |
-| `0.13-0.27-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.27.x` during tag creation |
-| `0.13-0.26-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.26.x` during tag creation |
-| `0.13-0.25-<tag>` | Tag: `<tag>`      | latest stable `0.13.x` during tag creation | latest stable `0.25.x` during tag creation |
-|                   |                   |                                            |                                            |
-| `0.12-0.24-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.24.x` during tag creation |
-| `0.12-0.23-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.23.x` during tag creation |
-| `0.12-0.22-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.22.x` during tag creation |
-| `0.12-0.21-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.21.x` during tag creation |
-| `0.12-0.20-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.20.x` during tag creation |
-| `0.12-0.19-<tag>` | Tag: `<tag>`      | latest stable `0.12.x` during tag creation | latest stable `0.19.x` during tag creation |
-|                   |                   |                                            |                                            |
-| `0.11-0.18-<tag>` | Tag: `<tag>`      | latest stable `0.11.x` during tag creation | latest stable `0.18.x` during tag creation |
+
+#### Point in time releases
+
+The following Docker image tags are built once and can be used for reproducible builds. Its version never changes so you will have to update tags in your pipelines from time to time in order to stay up-to-date.
+
+[![build](https://github.com/cytopia/docker-terragrunt/workflows/build/badge.svg)](https://github.com/cytopia/docker-terragrunt/actions?query=workflow%3Abuild)
+
+| Docker Tag           | Git Ref      | Terraform     | Terragrunt   | Available Architectures                      |
+|----------------------|--------------|---------------|--------------|----------------------------------------------|
+| `latest-<tag>`       | tag: `<tag>` | latest        | latest       | `amd64`, `i386`, `arm64`                     |
+|                      |              |               |              |                                              |
+| `1.2-0.38-<tag>`     | tag: `<tag>` | **`1.2.x`**   | **`0.38.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.2-0.37-<tag>`     | tag: `<tag>` | **`1.2.x`**   | **`0.37.x`** | `amd64`, `i386`, `arm64`                     |
+|                      |              |               |              |                                              |
+| `1.1-0.38-<tag>`     | tag: `<tag>` | **`1.1.x`**   | **`0.38.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.1-0.37-<tag>`     | tag: `<tag>` | **`1.1.x`**   | **`0.37.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.1-0.36-<tag>`     | tag: `<tag>` | **`1.1.x`**   | **`0.36.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.1-0.35-<tag>`     | tag: `<tag>` | **`1.1.x`**   | **`0.35.x`** | `amd64`, `i386`, `arm64`                     |
+|                      |              |               |              |                                              |
+| `1.0-0.38-<tag>`     | tag: `<tag>` | **`1.0.x`**   | **`0.38.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.37-<tag>`     | tag: `<tag>` | **`1.0.x`**   | **`0.37.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.36-<tag>`     | tag: `<tag>` | **`1.0.x`**   | **`0.36.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.35-<tag>`     | tag: `<tag>` | **`1.0.x`**   | **`0.35.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.34-<tag>`     | tag: `<tag>` | **`1.0.x`**   | **`0.34.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.33-<tag>`     | tag: `<tag>` | **`1.0.x`**   | **`0.33.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.32-<tag>`     | tag: `<tag>` | **`1.0.x`**   | **`0.32.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.0-0.31-<tag>`     | tag: `<tag>` | **`1.0.x`**   | **`0.31.x`** | `amd64`, `i386`, `arm64`                     |
+|                      |              |               |              |                                              |
+| `0.15-0.34-<tag>`    | tag: `<tag>` | **`0.15.x`**  | **`0.34.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.15-0.33-<tag>`    | tag: `<tag>` | **`0.15.x`**  | **`0.33.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.15-0.32-<tag>`    | tag: `<tag>` | **`0.15.x`**  | **`0.32.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.15-0.31-<tag>`    | tag: `<tag>` | **`0.15.x`**  | **`0.31.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.15-0.30-<tag>`    | tag: `<tag>` | **`0.15.x`**  | **`0.30.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.15-0.29-<tag>`    | tag: `<tag>` | **`0.15.x`**  | **`0.29.x`** | `amd64`, `i386`, `arm64`                     |
+|                      |              |               |              |                                              |
+| `0.14-0.34-<tag>`    | tag: `<tag>` | **`0.14.x`**  | **`0.34.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.33-<tag>`    | tag: `<tag>` | **`0.14.x`**  | **`0.33.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.32-<tag>`    | tag: `<tag>` | **`0.14.x`**  | **`0.32.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.31-<tag>`    | tag: `<tag>` | **`0.14.x`**  | **`0.31.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.30-<tag>`    | tag: `<tag>` | **`0.14.x`**  | **`0.30.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.29-<tag>`    | tag: `<tag>` | **`0.14.x`**  | **`0.29.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.28-<tag>`    | tag: `<tag>` | **`0.14.x`**  | **`0.28.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.14-0.27-<tag>`    | tag: `<tag>` | **`0.14.x`**  | **`0.27.x`** | `amd64`, `i386`                              |
+|                      |              |               |              |                                              |
+| `0.13-0.34-<tag>`    | tag: `<tag>` | **`0.13.x`**  | **`0.34.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.33-<tag>`    | tag: `<tag>` | **`0.13.x`**  | **`0.33.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.32-<tag>`    | tag: `<tag>` | **`0.13.x`**  | **`0.32.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.31-<tag>`    | tag: `<tag>` | **`0.13.x`**  | **`0.31.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.30-<tag>`    | tag: `<tag>` | **`0.13.x`**  | **`0.30.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.29-<tag>`    | tag: `<tag>` | **`0.13.x`**  | **`0.29.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.28-<tag>`    | tag: `<tag>` | **`0.13.x`**  | **`0.28.x`** | `amd64`, `i386`, `arm64`                     |
+| `0.13-0.27-<tag>`    | tag: `<tag>` | **`0.13.x`**  | **`0.27.x`** | `amd64`, `i386`                              |
+| `0.13-0.26-<tag>`    | tag: `<tag>` | **`0.13.x`**  | **`0.26.x`** | `amd64`, `i386`                              |
+| `0.13-0.25-<tag>`    | tag: `<tag>` | **`0.13.x`**  | **`0.25.x`** | `amd64`, `i386`                              |
+|                      |              |               |              |                                              |
+| `0.12-0.24-<tag>`    | tag: `<tag>` | **`0.12.x`**  | **`0.24.x`** | `amd64`, `i386`                              |
+| `0.12-0.23-<tag>`    | tag: `<tag>` | **`0.12.x`**  | **`0.23.x`** | `amd64`, `i386`                              |
+| `0.12-0.22-<tag>`    | tag: `<tag>` | **`0.12.x`**  | **`0.22.x`** | `amd64`, `i386`                              |
+| `0.12-0.21-<tag>`    | tag: `<tag>` | **`0.12.x`**  | **`0.21.x`** | `amd64`, `i386`                              |
+| `0.12-0.20-<tag>`    | tag: `<tag>` | **`0.12.x`**  | **`0.20.x`** | `amd64`, `i386`                              |
+| `0.12-0.19-<tag>`    | tag: `<tag>` | **`0.12.x`**  | **`0.19.x`** | `amd64`, `i386`                              |
+|                      |              |               |              |                                              |
+| `0.11-0.18-<tag>`    | tag: `<tag>` | **`0.11.x`**  | **`0.18.x`** | `amd64`, `i386`                              |
 
 Where `<tag>` refers to the chosen git tag from this repository.
 
 
-## Docker mounts
+## :open_file_folder: Docker mounts
 
 The working directory inside the Docker container is **`/data/`** and should be mounted to your local filesystem where your Terragrant project resides.
 (See [Examples](#examples) for mount location usage.)
 
 
-## Usage
+## :computer: Usage
 
 ```bash
 docker run --rm -v $(pwd):/data cytopia/terragrunt terragrunt <ARGS>
 docker run --rm -v $(pwd):/data cytopia/terragrunt terraform <ARGS>
 ```
 
-## Environment variables
+## :capital_abcd: Environment variables
 
 The following environment variables will ease your life when mounting directories into the docker container by maintaining file system permissions.
 
@@ -206,7 +211,7 @@ The following environment variables will ease your life when mounting directorie
 | `GID`          | `1000`  | Set to the gid of your local user (`id -g`) if you want to run as non root. |
 
 
-## Examples
+## :information_source: Examples
 
 ### 1. Simple: Provision single sub-project on AWS
 
@@ -339,7 +344,7 @@ docker run --rm \
 <!-- #### 2.4 Makefile integration -->
 
 
-## Related [#awesome-ci](https://github.com/topics/awesome-ci) projects
+## :arrows_counterclockwise: Related [#awesome-ci](https://github.com/topics/awesome-ci) projects
 
 ### Docker images
 
@@ -493,7 +498,8 @@ Visit **[cytopia/makefiles](https://github.com/cytopia/makefiles)** for dependen
 The provided Makefiles will only require GNU Make and Docker itself removing the need to install anything else.
 
 
-## License
+## :page_facing_up: License
+
 
 **[MIT License](LICENSE)**
 
