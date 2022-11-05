@@ -67,6 +67,7 @@ The following Docker image tags are rolling releases and are built and updated e
 |----------------------|-----------|---------------|--------------|----------------------------------------------|
 | `latest`             | master    | latest        | latest       | `amd64`, `i386`, `arm64`                     |
 |                      |           |               |              |                                              |
+| `1.3-0.40`           | master    | **`1.3.x`**   | **`0.40.x`** | `amd64`, `i386`, `arm64`                     |
 | `1.3-0.39`           | master    | **`1.3.x`**   | **`0.39.x`** | `amd64`, `i386`, `arm64`                     |
 |                      |           |               |              |                                              |
 | `1.2-0.39`           | master    | **`1.2.x`**   | **`0.39.x`** | `amd64`, `i386`, `arm64`                     |
@@ -134,6 +135,7 @@ The following Docker image tags are built once and can be used for reproducible 
 |----------------------|--------------|---------------|--------------|----------------------------------------------|
 | `latest-<tag>`       | tag: `<tag>` | latest        | latest       | `amd64`, `i386`, `arm64`                     |
 |                      |              |               |              |                                              |
+| `1.3-0.40-<tag>`     | tag: `<tag>` | **`1.3.x`**   | **`0.40.x`** | `amd64`, `i386`, `arm64`                     |
 | `1.3-0.39-<tag>`     | tag: `<tag>` | **`1.3.x`**   | **`0.39.x`** | `amd64`, `i386`, `arm64`                     |
 |                      |              |               |              |                                              |
 | `1.2-0.39-<tag>`     | tag: `<tag>` | **`1.2.x`**   | **`0.39.x`** | `amd64`, `i386`, `arm64`                     |
