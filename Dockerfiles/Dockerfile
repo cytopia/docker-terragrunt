@@ -1,8 +1,9 @@
-FROM alpine:3.13 as builder
+FROM alpine:3.16 as builder
 
 # Install build dependencies
 RUN set -eux \
 	&& apk --no-cache add \
+		coreutils \
 		curl \
 		dpkg \
 		git \
@@ -68,21 +69,22 @@ RUN set -eux \
 	&& curl --fail -sS -L \
 		https://github.com/gruntwork-io/terragrunt/releases/download/${VERSION}/terragrunt_linux_${ARCH} \
 		-o /usr/bin/terragrunt \
-	&& chmod +x /usr/bin/terragrunt
-
-# Test binaries
-RUN set -eux \
+	&& chmod +x /usr/bin/terragrunt \
+	\
 	&& terraform --version \
 	&& terragrunt --version
 
 
 # Use a clean tiny image to store artifacts in
-FROM alpine:3.13
+FROM alpine:3.16
 LABEL \
 	maintainer="cytopia <cytopia@everythingcli.org>" \
 	repo="https://github.com/cytopia/docker-terragrunt"
 RUN set -eux \
-	&& apk add --no-cache git openssh-client
+	&& apk add --no-cache \
+		git \
+		openssh-client
+
 COPY --from=builder /usr/bin/terraform /usr/bin/terraform
 COPY --from=builder /usr/bin/terragrunt /usr/bin/terragrunt
 COPY data/docker-entrypoint.sh /docker-entrypoint.sh
