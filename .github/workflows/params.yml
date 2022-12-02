@@ -17,6 +17,8 @@ env:
         "VERSION": [
             "latest",
 
+            "TF-1.3    TG-0.42",
+            "TF-1.3    TG-0.41",
             "TF-1.3    TG-0.40",
             "TF-1.3    TG-0.39",
 
