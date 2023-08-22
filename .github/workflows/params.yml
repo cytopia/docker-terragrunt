@@ -69,7 +69,7 @@ env:
             "TF-0.13   TG-0.33",
             "TF-0.13   TG-0.32",
             "TF-0.13   TG-0.31",
-            "TF-0.13   TG-0.30",
+            "TF-0.13   TG-0.30"
         ],
         "FLAVOUR": ["latest"],
         "ARCH":    ["linux/amd64", "linux/386", "linux/arm64"]
