@@ -181,7 +181,7 @@ _test-tg-version:
 		fi; \
 	else \
 		echo "Testing for tag: $(TG_VERSION)"; \
-		if ! docker run --rm --platform $(ARCH) $(IMAGE):$(DOCKER_TAG) terragrunt --version | grep -E "^terragrunt[[:space:]]*version[[:space:]]*v?$(TG_VERSION)\.[.0-9]+$$"; then \
+		if ! docker run --rm --platform $(ARCH) $(IMAGE):$(DOCKER_TAG) terragrunt --version | grep -E "^terragrunt[[:space:]]*version[[:space:]]*v?$(TG_VERSION)\.[.0-9]+(-[-a-z0-9]+)?$$"; then \
 			echo "Failed"; \
 			exit 1; \
 		fi; \
