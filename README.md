@@ -67,6 +67,8 @@ The following Docker image tags are rolling releases and are built and updated e
 |-------------|-----------|---------------|--------------|----------------------------------------------|
 | `latest`    | master    | latest        | latest       | `amd64`, `i386`, `arm64`                     |
 |             |           |               |              |                                              |
+| `1.6-0.55`  | master    | **`1.6.x`**   | **`0.55.x`** | `amd64`, `i386`, `arm64`                     |
+| `1.6-0.54`  | master    | **`1.6.x`**   | **`0.54.x`** | `amd64`, `i386`, `arm64`                     |
 | `1.6-0.53`  | master    | **`1.6.x`**   | **`0.53.x`** | `amd64`, `i386`, `arm64`                     |
 |             |           |               |              |                                              |
 | `1.5-0.53`  | master    | **`1.5.x`**   | **`0.53.x`** | `amd64`, `i386`, `arm64`                     |
