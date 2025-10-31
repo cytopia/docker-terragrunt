@@ -214,9 +214,9 @@ _test-tg:
 	@CURRENT_VERSION="$$( \
 		docker run --rm --platform $(ARCH) $(IMAGE):$(DOCKER_TAG) terragrunt --version \
 		| grep -Eo 'v[0-9]+\.[0-9]+\.[0-9]+$$' \
-		| grep -Ei 'v[0-9]+\.[0-9]+\.[0-9]+$$' \
+		| grep -Eo '[0-9]+\.[0-9]+\.[0-9]+$$' \
 	)"; \
-	if [ "$(printf '%s\n%s\n' "$${CURRENT_VERSION}" "0.92.0" | sort -V | head -n1)" != "$new" ]; then \
+	if [ "$$(printf '%s\n%s\n' "0.92.0" "$${CURRENT_VERSION}" | sort -V | tail -n1)" = "$${CURRENT_VERSION}" ]; then \
 		if ! docker run --rm --platform $(ARCH) -v $(CURRENT_DIR)/tests/terragrunt:/data $(IMAGE):$(DOCKER_TAG) terragrunt info print; then \
 			docker run --rm --platform $(ARCH) -v $(CURRENT_DIR)/tests/terragrunt:/data $(IMAGE):$(DOCKER_TAG) sh -c "if test -d .terragrunt-cache; then rm -rf .terragrunt-cache; fi"; \
 			echo "Failed"; \
