@@ -193,16 +193,9 @@ _test-tf:
 	@echo "------------------------------------------------------------"
 	@echo "- Testing Terraform"
 	@echo "------------------------------------------------------------"
-	@if [ "$(TF_VERSION)" = "0.11" ]; then \
-		if ! docker run --rm --platform $(ARCH) -v $(CURRENT_DIR)/tests/terraform/0.11:/data $(IMAGE):$(DOCKER_TAG) terraform fmt; then \
-			echo "Failed"; \
-			exit 1; \
-		fi; \
-	else \
-		if ! docker run --rm --platform $(ARCH) -v $(CURRENT_DIR)/tests/terraform/0.xx:/data $(IMAGE):$(DOCKER_TAG) terraform fmt; then \
-			echo "Failed"; \
-			exit 1; \
-		fi; \
+	@if ! docker run --rm --platform $(ARCH) -v $(CURRENT_DIR)/tests/terraform:/data $(IMAGE):$(DOCKER_TAG) terraform fmt; then \
+		echo "Failed"; \
+		exit 1; \
 	fi; \
 	echo "Success";
 
