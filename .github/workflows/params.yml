@@ -112,21 +112,6 @@ env:
         ],
         "FLAVOUR": ["latest"],
         "ARCH":    ["linux/amd64", "linux/386", "linux/arm64"]
-      },
-      {
-        "NAME":    "tg",
-        "VERSION": [
-            "TF-0.12   TG-0.24",
-            "TF-0.12   TG-0.23",
-            "TF-0.12   TG-0.22",
-            "TF-0.12   TG-0.21",
-            "TF-0.12   TG-0.20",
-            "TF-0.12   TG-0.19",
-
-            "TF-0.11   TG-0.18"
-        ],
-        "FLAVOUR": ["latest"],
-        "ARCH":    ["linux/amd64", "linux/386"]
       }
     ]
 
@@ -160,7 +145,7 @@ jobs:
 
       - name: "[Set-Output] Matrix 'Refs' (master branch and latest tag)"
         id: set-refs
-        uses: cytopia/git-ref-matrix-action@v0.1.13
+        uses: cytopia/git-ref-matrix-action@v0.1.15
         with:
           repository_default_branch: master
           branches: master
